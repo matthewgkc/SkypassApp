@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% from 'bootstrap5/form.html' import render_form %}
+
+{% block content %}
+
+<div class="container mt-2">
+<div class="page-header">
+    <h2 class="txt mt-3 mb-3">{{heading}}</h2>
+</div>
+
+<!-- Form rendering is simple and easy if using bootstrap -->
+<div class="container">
+  <div class="row">
+    <div class="txt">
+      {{render_form(form)}}
+    </div>
+
+  </div>
+
+</div>
+
+<!--Extra Space Block-->
+<div class="container">
+  <div class="row mt-4 mb-4"></div>
+  <div class="row mt-4 mb-4"></div>
+  <div class="row mt-4 mb-4"></div>
+</div>
+
+<!--Extra Space Block-->
+<div class="container">
+  <div class="row mt-4 mb-4"></div>
+  <div class="row mt-4 mb-4"></div>
+  <div class="row mt-4 mb-4"></div>
+</div>
+
+<!--Extra Space Block-->
+<div class="container">
+  <div class="row mt-4 mb-4"></div>
+  <div class="row mt-4 mb-4"></div>
+  <div class="row mt-4 mb-4"></div>
+</div>
+
+{% endblock %}

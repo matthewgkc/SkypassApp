@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+<title>Skypass | Home</title>
+
+{% endblock %}
+
+{% block header %}
+      <!--Jumbotron-->
+      <div class="container-fluid">
+         <div class="row justify-content-center mt-5 pb-4">
+            <div class="col-md-8 blockcolor">
+               <div class="card shadow p-5 mb-5 darkblock">
+                  <h1 class="text-center mb-3">Find our best travel deals</h1>
+
+                  <form class="form-inline d-flex flex-nowrap blockcolor" action="{{url_for('main.search')}}" >
+                     <input type="text" name="search" class="form-control flex-grow-1 my-1 mr-sm-2" id="SearchForm">
+                     <button type="submit" class="flex-shrink-1 btn btn-primary my-1">Submit</button>
+                   </form>
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+{% endblock %}
+
+{% block content %}   
+      <div class="container">
+         <div class="row mt-5 mb-5 justify-content-center">
+            <div class="col-md-10">
+               <div class="media border p-3 d-flex justify-content-start blockcolor rounded-2">
+                  <img class="align-self-center me-3" style="max-width:120px"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Earth_Western_Hemisphere_transparent_background.png/600px-Earth_Western_Hemisphere_transparent_background.png"
+                     alt="Planet Earth">
+                  <div class="align-self-center media-body">
+                     <h5 class="mt-0 txt">Find the best destinations on Earth!</h5>
+                     {% if current_user.is_authenticated %}
+                     <p class="d-none d-sm-block txt">
+                        Browse for countries to find the best events,
+                        food, and scenary in the world!
+                     </p>
+                     {% else %}
+                     <p class="d-none d-sm-block txt">
+                        Just sign in to explore any country in the world where you can find the best events,
+                        food, and scenary!
+                     </p>
+                     <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Join Now</a>
+                     {% endif %}
+
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="card-group blockcolor rounded-2">
+            {% for destination in destinations %}
+            <div class="card m-3 rounded-2">
+               <img class="card-img-top"
+                  src="{{ destination.image }}" alt="destination picture">
+               <div class="card-body">
+                  <h5 class="card-title">{{ destination.name }}</h5>
+                  <p class="card-text">{{ destination.description }}</p>
+               </div>
+               <div class="card-footer"><a href="{{ url_for('destination.show', id=destination.id) }}" class ="btn btn-danger"> View Details </a></div>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+{% endblock %}
