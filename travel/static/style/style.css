@@ -1,0 +1,74 @@
+body {
+    background-color: #003566;
+    font-family: 'Rubik', sans-serif;
+}
+.slideimg {
+    max-height: 800px;
+}
+.navbar {
+    background-color: #000814;
+}
+.navbar-text,
+.navbar-brand ,
+.nav-link {
+    color: white;
+}
+.nav-item:hover {
+    color: white;
+    background-color: #003566;
+}
+.navbar-brand:hover {
+    color: white;
+    background-color: #003566;
+}
+h1 {
+    color: white;
+}
+.btn {
+    background-color: #001d3d;
+    color: white;
+}
+.btn:active,
+.active {
+color: #001d3d !important;
+background-color: #ffd60a !important;
+border-color: null !important;
+}
+.btn-outline-success {
+    border-color: white;
+}
+.slideTitle {
+    font-weight: bold;
+}
+.card-status-open {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #ffd60a;
+}
+.card-status-inactive {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: lightgray;
+}
+.card-status-cancelled {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: crimson;
+}
+.blockcolor {
+    background-color: #001d3d;
+}
+.darkblock {
+    background-color: #000814;
+}
+.tinyText {
+    color: #ffd60a;
+    font-size: 12px;
+}
+.txt {
+    color: white;
+}
+.txt-faded {
+    color: darkgrey;
+    font-size: 12px;
+}
